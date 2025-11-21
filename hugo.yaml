@@ -1,0 +1,164 @@
+baseURL: https://example.org/  # 部署时需要改为你的 GitHub Pages 地址
+languageCode: zh-cn
+title: 我的技术博客
+theme: PaperMod
+
+# 启用 emoji 支持
+enableEmoji: true
+
+# 启用 Git 信息
+enableGitInfo: false
+
+# 分页设置
+pagination:
+  pagerSize: 10
+
+# 构建设置
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+# 输出格式
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON  # 用于搜索功能
+
+# 最小化配置
+minify:
+  disableXML: true
+  minifyOutput: true
+
+# 语言设置
+languages:
+  zh-cn:
+    languageName: "简体中文"
+    weight: 1
+    taxonomies:
+      category: categories
+      tag: tags
+      series: series
+    menu:
+      main:
+        - name: 首页
+          url: /
+          weight: 1
+        - name: 归档
+          url: /archives/
+          weight: 2
+        - name: 分类
+          url: /categories/
+          weight: 3
+        - name: 标签
+          url: /tags/
+          weight: 4
+        - name: 搜索
+          url: /search/
+          weight: 5
+        - name: 关于
+          url: /about/
+          weight: 6
+
+# PaperMod 主题配置
+params:
+  env: production  # 设置为生产环境
+  title: 我的技术博客
+  description: "分享技术、记录成长"
+  author: 你的名字  # 修改为你的名字
+  
+  # 图标和资源
+  # images: ["/images/avatar.png"]  # 可选：添加站点图标
+  
+  # 显示设置
+  ShowReadingTime: true  # 显示阅读时间
+  ShowPostNavLinks: true  # 显示文章导航链接
+  ShowBreadCrumbs: true  # 显示面包屑导航
+  ShowCodeCopyButtons: true  # 显示代码复制按钮
+  ShowWordCount: true  # 显示字数统计
+  ShowRssButtonInSectionTermList: true  # 在分类/标签列表显示 RSS
+  
+  # 社交链接设置
+  ShowShareButtons: true
+  ShareButtons: ["twitter", "linkedin", "reddit", "facebook"]
+  
+  # 时间格式
+  dateFormat: "2006-01-02"
+  
+  # 默认主题模式（light/dark/auto）
+  defaultTheme: auto
+  disableThemeToggle: false
+  
+  # 搜索设置
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "summary", "content"]
+  
+  # 首页信息
+  homeInfoParams:
+    Title: "欢迎来到我的技术博客 👋"
+    Content: >
+      这里记录我的学习笔记、技术思考和项目经验。
+      
+      
+      主要关注系统编程、算法和软件工程。
+
+  # 社交链接图标
+  socialIcons:
+    - name: github
+      url: "https://github.com/你的用户名"  # 修改为你的 GitHub
+    - name: email
+      url: "mailto:your-email@example.com"  # 修改为你的邮箱
+    - name: rss
+      url: "/index.xml"
+
+  # 代码高亮设置
+  assets:
+    disableHLJS: false  # 不禁用 highlight.js
+  
+  # 封面图片设置
+  cover:
+    linkFullImages: true
+    hidden: false
+    hiddenInList: false
+    hiddenInSingle: false
+
+  # 编辑建议链接（可选）
+  # editPost:
+  #   URL: "https://github.com/你的用户名/blog/tree/main/content"
+  #   Text: "建议编辑"
+  #   appendFilePath: true
+
+# 代码高亮配置（使用 Chroma）
+markup:
+  highlight:
+    anchorLineNos: false
+    codeFences: true
+    guessSyntax: true
+    lineNos: false
+    noClasses: false
+    style: monokai  # 代码高亮主题
+  goldmark:
+    renderer:
+      unsafe: true  # 允许 HTML 内容
+  tableOfContents:
+    endLevel: 3
+    ordered: false
+    startLevel: 2
+
+# 隐私设置
+privacy:
+  youtube:
+    privacyEnhanced: true
+
+# 服务配置
+services:
+  disqus:
+    shortname: ""  # 如果要使用 Disqus 评论，填入你的 shortname
+  googleAnalytics:
+    ID: ""  # 如果要使用 Google Analytics，填入你的 ID
